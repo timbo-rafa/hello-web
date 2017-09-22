@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="resizeable columns">
+		<meta name="keywords" content="HTML, CSS, XML, JavaScript">
+		<meta name="author" content="Rafael Timbo Matos">
+		<link rel="stylesheet" type="text/css" href="main.css">
+
+		<title>Rafael Timbo's Page</title>
+</head>
+<body>
+
+  <div id="days">
+  </div>
+
+  <button id="button1">
+    Click me!
+  </button>
+
+  <script>
+    var days = document.getElementById("days")
+    var daysOfWeek = [ "Monday", "Tuesday", "Wednesday", "Thursday",
+                       "Friday", "Saturday", "Sunday" ]
+    var res = ""
+    for(var i = 0; i < daysOfWeek.length; i++) {
+      res +=" " + daysOfWeek[i];
+    }
+
+    var numberOfClicks = 0
+    var button1 = document.getElementById("button1")
+    button1.addEventListener("click", function() {
+      numberOfClicks += 1
+      button1.innerHTML = "Clicked " + numberOfClicks + " times"
+    })
+
+    res += "<br>" + Date()
+    days.innerHTML = res
+    days.addEventListener("click", function () {
+      days.innerHTML += "<br>" + "Click received!"
+    })
+  </script>
+
+</body>
+</html>
